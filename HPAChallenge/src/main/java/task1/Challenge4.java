@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Challenge_Final {
+public class Challenge4 {
 
 	static WebDriver driver;
 	static WebDriverWait wait;
@@ -68,34 +68,52 @@ public class Challenge_Final {
 		String strfromcity = fromCity.getAttribute("placeholder");
 		fromCity.sendKeys(strfromcity);
 		
+//		String s=driver.findElement(By.xpath("(//input[@id='formDate'])[1]")).getAttribute("placeholder"); 
+//		System.out.println(s);
+//		driver.findElement(By.xpath("(//input[@id='formDate'])[1]")).sendKeys(s);
+		
+		//driver.findElement(By.id("formCity")).sendKeys("Nashville");
 		WebElement fromState = driver.findElement(By.id("formState"));
 		String fromstate = fromState.getAttribute("placeholder");
 		fromState.sendKeys(fromstate);
+		
+		//driver.findElement(By.id("formState")).sendKeys("Tennessee");
 		
 		WebElement fromCountry = driver.findElement(By.id("formCountry"));
 		String strfromCountry = fromCountry.getAttribute("placeholder");
 		fromCountry.sendKeys(strfromCountry);
 		
+		//driver.findElement(By.id("formCountry")).sendKeys("USA");
+		
 		WebElement fromDate1 = driver.findElement(By.xpath("(//input[@id='formDate'])[2]"));
 		String strfromDate1 = fromDate1.getAttribute("placeholder");
 		fromDate1.sendKeys(strfromDate1);
+		
+		//driver.findElement(By.xpath("//input[@type='text' and @id='formDate' and @placeholder='2009-08-26']")).sendKeys("2009-08-26");
 		
 		WebElement fromCity1 = driver.findElement(By.xpath("(//input[@id='formCity'])[2]"));
 		String strfromCity1 = fromCity1.getAttribute("placeholder");
 		fromCity1.sendKeys(strfromCity1);
 		
+		//driver.findElement(By.xpath("//input[@type='text' and @id='formCity' and @placeholder='Seattle']")).sendKeys("Seattle");
+		
 		WebElement fromState1 = driver.findElement(By.xpath("(//input[@id='formState'])[2]"));
 		String strfromState1 = fromState1.getAttribute("placeholder");
 		fromState1.sendKeys(strfromState1);
+		
+		//driver.findElement(By.xpath("//input[@type='text' and @id='formState' and @placeholder='Washington']")).sendKeys("Washington");
 		
 		WebElement formCountry1 = driver.findElement(By.xpath("(//input[@id='formCountry'])[2]"));
 		String strformCountry1 = formCountry1.getAttribute("placeholder");
 		formCountry1.sendKeys(strformCountry1);
 		
+		//driver.findElement(By.xpath("(//input[@id='formCountry'])[2]")).sendKeys("USA");
+		
 		WebElement fromdate2 = driver.findElement(By.xpath("(//input[@id='formDate'])[3]"));
 		String strfromdate2 = fromdate2.getAttribute("placeholder");
 		fromdate2.sendKeys(strfromdate2);
 		
+		//driver.findElement(By.xpath("//input[@type='text' and @id='formDate' and @placeholder='2007-10-10']")).sendKeys("2007-10-10");
 		driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
 		isAlertPresent();
 
@@ -104,9 +122,7 @@ public class Challenge_Final {
 		String linenum = driver.findElement(By.xpath("//*[@id=\"lineNum\"]")).getText();
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		//WebElement Element = driver.findElement(By.xpath("//tbody//tr['"+linenum+"']//td[1]"));
-		WebElement Element = driver.findElement(By.xpath("(//input[@type='text'])['"+linenum+"']"));
-		//(//input[@type='text'])[35]
+		WebElement Element = driver.findElement(By.xpath("//tbody//tr['"+linenum+"']//td[1]"));
 		js.executeScript("arguments[0].scrollIntoView();", Element);
 
 		WebElement element = driver.findElement(By.xpath("(//input[@type='text'])["+linenum+"]"));

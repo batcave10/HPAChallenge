@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Challenge_Final {
+public class Challenge3 {
 
 	static WebDriver driver;
 	static WebDriverWait wait;
@@ -60,42 +60,23 @@ public class Challenge_Final {
 		drpCountry.selectByVisibleText(drpdowntxt);
 		isAlertPresent();
 		
-		WebElement fromDate= driver.findElement(By.id("formDate"));
-		String strFromDate = fromDate.getAttribute("placeholder");
-		fromDate.sendKeys(strFromDate);
+		//String date = "2017-05-04";
+		//driver.findElement(By.id("formDate")).sendKeys("2017-05-04");
+		WebElement frmdate1= driver.findElement(By.xpath("(//input[@id='formDate'])[1]"));
+		String frmdate = frmdate1.getAttribute("placeholder");
+		frmdate1.sendKeys(frmdate);
+		String s=driver.findElement(By.xpath("(//input[@id='formDate'])[1]")).getAttribute("placeholder"); 
+		System.out.println(s);
+		driver.findElement(By.xpath("(//input[@id='formDate'])[1]")).sendKeys(s);
 		
-		WebElement fromCity = driver.findElement(By.id("formCity"));
-		String strfromcity = fromCity.getAttribute("placeholder");
-		fromCity.sendKeys(strfromcity);
-		
-		WebElement fromState = driver.findElement(By.id("formState"));
-		String fromstate = fromState.getAttribute("placeholder");
-		fromState.sendKeys(fromstate);
-		
-		WebElement fromCountry = driver.findElement(By.id("formCountry"));
-		String strfromCountry = fromCountry.getAttribute("placeholder");
-		fromCountry.sendKeys(strfromCountry);
-		
-		WebElement fromDate1 = driver.findElement(By.xpath("(//input[@id='formDate'])[2]"));
-		String strfromDate1 = fromDate1.getAttribute("placeholder");
-		fromDate1.sendKeys(strfromDate1);
-		
-		WebElement fromCity1 = driver.findElement(By.xpath("(//input[@id='formCity'])[2]"));
-		String strfromCity1 = fromCity1.getAttribute("placeholder");
-		fromCity1.sendKeys(strfromCity1);
-		
-		WebElement fromState1 = driver.findElement(By.xpath("(//input[@id='formState'])[2]"));
-		String strfromState1 = fromState1.getAttribute("placeholder");
-		fromState1.sendKeys(strfromState1);
-		
-		WebElement formCountry1 = driver.findElement(By.xpath("(//input[@id='formCountry'])[2]"));
-		String strformCountry1 = formCountry1.getAttribute("placeholder");
-		formCountry1.sendKeys(strformCountry1);
-		
-		WebElement fromdate2 = driver.findElement(By.xpath("(//input[@id='formDate'])[3]"));
-		String strfromdate2 = fromdate2.getAttribute("placeholder");
-		fromdate2.sendKeys(strfromdate2);
-		
+		driver.findElement(By.id("formCity")).sendKeys("Nashville");
+		driver.findElement(By.id("formState")).sendKeys("Tennessee");
+		driver.findElement(By.id("formCountry")).sendKeys("USA");
+		driver.findElement(By.xpath("//input[@type='text' and @id='formDate' and @placeholder='2009-08-26']")).sendKeys("2009-08-26");
+		driver.findElement(By.xpath("//input[@type='text' and @id='formCity' and @placeholder='Seattle']")).sendKeys("Seattle");
+		driver.findElement(By.xpath("//input[@type='text' and @id='formState' and @placeholder='Washington']")).sendKeys("Washington");
+		driver.findElement(By.xpath("(//input[@id='formCountry'])[2]")).sendKeys("USA");
+		driver.findElement(By.xpath("//input[@type='text' and @id='formDate' and @placeholder='2007-10-10']")).sendKeys("2007-10-10");
 		driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
 		isAlertPresent();
 
@@ -104,9 +85,7 @@ public class Challenge_Final {
 		String linenum = driver.findElement(By.xpath("//*[@id=\"lineNum\"]")).getText();
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		//WebElement Element = driver.findElement(By.xpath("//tbody//tr['"+linenum+"']//td[1]"));
-		WebElement Element = driver.findElement(By.xpath("(//input[@type='text'])['"+linenum+"']"));
-		//(//input[@type='text'])[35]
+		WebElement Element = driver.findElement(By.xpath("//tbody//tr['"+linenum+"']//td[1]"));
 		js.executeScript("arguments[0].scrollIntoView();", Element);
 
 		WebElement element = driver.findElement(By.xpath("(//input[@type='text'])["+linenum+"]"));

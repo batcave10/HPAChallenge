@@ -12,14 +12,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-public class Challenge_Final {
+public class Challenge_Final_TestNG {
 
 	static WebDriver driver;
 	static WebDriverWait wait;
-
-	public static void main(String[] args) {
-		String projectpath = System.getProperty("user.dir");
+	
+	@BeforeTest
+	public void setup() {
+	String projectpath = System.getProperty("user.dir");
 
 		//chrome driver initialization
 		System.setProperty("webdriver.chrome.driver", projectpath +"//drivers//chromedriver//chromedriver.exe");
@@ -33,7 +37,9 @@ public class Challenge_Final {
 		//get url
 		String url = "http://hpa.services/automation-challenge/";
 		driver.get(url);
-
+	}
+	@Test
+	public void Test1() {
 		driver.findElement(By.id("Box1")).click();
 		isAlertPresent();
 
@@ -131,7 +137,9 @@ public class Challenge_Final {
 		driver.findElement(By.id("Box10")).click();
 		wait.until(ExpectedConditions.alertIsPresent());
 		isAlertPresent();
-
+	}
+	@AfterTest
+	public void tearDown() {
 		System.out.println("Completed");
 
 		driver.close();

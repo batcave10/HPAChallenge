@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="40072" started-at="2018-11-23T09:03:12Z" finished-at="2018-11-23T09:03:52Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="40072" started-at="2018-11-23T09:03:12Z" finished-at="2018-11-23T09:03:52Z">
+      <class name="task1.Challenge_Final_TestNG">
+        <test-method status="PASS" signature="setup()[pri:0, instance:task1.Challenge_Final_TestNG@1bce4f0a]" name="setup" is-config="true" duration-ms="17946" started-at="2018-11-23T09:03:12Z" finished-at="2018-11-23T09:03:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Test1()[pri:0, instance:task1.Challenge_Final_TestNG@1bce4f0a]" name="Test1" duration-ms="20396" started-at="2018-11-23T09:03:30Z" finished-at="2018-11-23T09:03:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test1 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:task1.Challenge_Final_TestNG@1bce4f0a]" name="tearDown" is-config="true" duration-ms="1395" started-at="2018-11-23T09:03:51Z" finished-at="2018-11-23T09:03:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- task1.Challenge_Final_TestNG -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

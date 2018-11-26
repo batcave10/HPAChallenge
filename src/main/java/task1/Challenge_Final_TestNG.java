@@ -30,7 +30,7 @@ public class Challenge_Final_TestNG {
 		driver = new ChromeDriver();
 
 		//wait and size
-		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		wait = new WebDriverWait(driver,50);
 
